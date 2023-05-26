@@ -39,6 +39,12 @@ func DefaultDeleteDatabaseFunction(db *sql.DB, database string) error {
 	return err
 }
 
+// ForceDeleteDatabaseFunction is a function used to delete instances with force.
+func ForceDeleteDatabaseFunction(db *sql.DB, database string) error {
+	_, err := db.Exec(`DROP DATABASE ` + database + ` WITH (FORCE);`)
+	return err
+}
+
 // Option is the signature of options that can be provided to NewPostgresTest.
 type Option func(opts *options)
 
