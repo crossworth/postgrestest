@@ -95,9 +95,9 @@ type TestingT interface {
 }
 
 // NewPostgresTest returns a database DSN for connecting to a test database.
-// It wil create a database on the base testing Postgres server.
+// It will create a database on the base testing Postgres server.
 // It's possible to provide a DSN on the TESTING_POSTGRES_TEST environmental variable.
-// If no value is present on the TESTING_POSTGRES_TEST envrioment variable
+// If no value is present on the TESTING_POSTGRES_TEST environment variable,
 // we try to use the default postgres://postgres:root@localhost:65432 as the base
 // Postgres server.
 func NewPostgresTest(t TestingT, opts ...Option) string {
@@ -140,7 +140,7 @@ func NewPostgresTest(t TestingT, opts ...Option) string {
 
 // AlterTableSequences alters the table sequences to random numbers.
 // This can be used to help find cases where a bug is introduced
-// because integration tests uses fresh database and sequences numbers are
+// because integration tests use a fresh database and sequence numbers are
 // very close to each other in all tables.
 func AlterTableSequences(t TestingT, db *sql.DB) {
 	if h, ok := t.(interface {
