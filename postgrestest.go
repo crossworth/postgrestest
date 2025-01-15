@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	_ "github.com/jackc/pgx/v4/stdlib" // postgres driver
+	_ "github.com/jackc/pgx/v5/stdlib" // postgres driver
 	"github.com/stretchr/testify/require"
 )
 
