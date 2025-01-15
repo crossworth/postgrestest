@@ -1,6 +1,6 @@
 services:
-  postgres14:
-    image: postgres:14
+  postgres17:
+    image: postgres:17
     restart: unless-stopped
     container_name: postgrestest
     # we disable a few options to make the database faster for testing
